@@ -204,14 +204,14 @@ console.log(filteredFood)
 //CODE HERE
 function filterByProperty(property, number, type) {
     let filteredArray = []
-    
+
     if (type === 'above') {
-        filteredArray = foodArr.filter(food => food[property] > number);
+        filteredArray = foodArr.filter(food => food[property] > number)
     } else if (type === 'below') {
-        filteredArray = foodArr.filter(food => food[property] < number);
+        filteredArray = foodArr.filter(food => food[property] < number)
     }
 
-    return filteredArray;
+    return filteredArray
 }
 
 /*
@@ -222,5 +222,5 @@ function filterByProperty(property, number, type) {
 */
 
 //CODE HERE
-const filteredByRatingAbove90 = filterByProperty('rating', 90, 'above');
-console.log(filteredByRatingAbove90);
+const filteredByRatingAbove90 = filterByProperty('rating', 90, 'above')
+console.log(filteredByRatingAbove90)
