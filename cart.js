@@ -50,15 +50,20 @@ console.log(summedPrice);
     the value of the coupon. Return the final
     number. 
 
-    Note: the numbers passed in for `tax` will be
+   the numbers passed in for `tax` will be
     decimals, for example: .06 for a 6% tax.
 */
 
 //CODE HERE
 
-function cartFinalPrice(cartTotal, couponValue, tax) {
-    
+function calcFinalPrice(cartTotal, couponValue, tax) {
+    const totalTax = cartTotal * tax
+    const finalPrice = cartTotal + totalTax - couponValue
+    return finalPrice
 }
+
+//I hope i did this on right i couldnt figure out if i was supposed to put in a number value 
+// for the tax.
 
 //////////////////PROBLEM 3////////////////////
 /*  
@@ -82,7 +87,9 @@ function cartFinalPrice(cartTotal, couponValue, tax) {
 
 /*
     TEXT ANSWER HERE
-
+    I am going to get a name, Phone number, address and email. I will use these so we can deliver food
+    to the customers house. All of these datatypes are strings. I chose a string for the phone number as 
+    well becuase it is not doing any math so i figured a string would do. 
 */
 
 /*
@@ -91,3 +98,9 @@ function cartFinalPrice(cartTotal, couponValue, tax) {
 */
 
 //CODE HERE
+ const customer = {
+    name: 'Rachel',
+    phone: '647-777-7270',
+    address: '1310 w 13th street tempe, AZ 84653',
+    email: 'rachellibby@gmail.com'
+ }

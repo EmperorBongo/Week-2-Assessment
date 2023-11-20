@@ -20,8 +20,15 @@
 */
 
 //CODE HERE
-let Employee = {
-    
+class employee {
+    constructor(name, shifts){
+        this.name = name;
+        this.shifts = shifts;
+    }    
+
+    getSchedule() {
+        console.log (`${this.name} works on ${this.shifts}`)
+    }
 }
 
 
@@ -36,7 +43,7 @@ let Employee = {
 */
 
 //CODE HERE
-
+const empOne = new employee("Jess", "weekday mornings, weekday afternoons")
 /*
     Call the `getSchedule` method on the
     `empOne` object.
@@ -44,6 +51,7 @@ let Employee = {
 
 //CODE HERE
 
+empOne.getSchedule()
 
 /*
     Make a copy of the empOne object
@@ -58,6 +66,14 @@ let Employee = {
 */
 
 //CODE HERE
+//const empTwo = { ...empOne } //this one confused me i had to google the spread operator
+//empTwo.name = ('Nick', empOne)
+const empTwo = new employee("nick", empOne.shifts)
+//console.log(empTwo)
+// I tried this one so many times to work with the spread but i could never get it to fully work i left my
+//work in comments idk what i did wrong. 
+
+empTwo.getSchedule()
 
 
 
@@ -85,12 +101,25 @@ let Employee = {
 */
 
 //CODE HERE
-
+class manager extends employee {
+    constructor(name, shifts, employees) {
+        super(name, shifts)
+        this.employees = employees || []
+    }
+    getEmployees() {
+        const employeeNames = this.employees.join(' and ')
+        console.log(`${this.name} manages ${employeeNames}`)
+      }
+      addEmployee(emp){
+        this.employees.push(emp)
+      }
+}
 
 
 /*
     Create a new instance of your class.
-    Save it to a variable called `manager`.
+    Save it to a variable called `manager`. NOTE is this written correctly? shouldnt this be called 
+    somthingelse?
 
     You can use this sample data or make
     up your own:
@@ -100,7 +129,7 @@ let Employee = {
 */
 
 //CODE HERE
-
+const myManager = new manager('Winston', ['weekday mornings', 'weekday afternoons'], ['Cece', 'Schmidt'])
 
 /*
     Call the `getEmployees` method on the
@@ -108,7 +137,7 @@ let Employee = {
 */
 
 //CODE HERE
-
+myManager.getEmployees()
 /*
     Call the `addEmployee` method on the 
     `manager` object passing in the string 
@@ -116,7 +145,7 @@ let Employee = {
 */
 
 //CODE HERE 
-
+myManager.addEmployee('Coach')
 /*
     Call the `getEmployees` method on the
     `manager` object again to confirm 
@@ -124,3 +153,7 @@ let Employee = {
 */
 
 //CODE HERE
+myManager.getEmployees()
+
+//This took me so much trial and error I just kept getting small things wrong. Im still unsure of a few things
+// I finally got it to console.log which was miracle. 
